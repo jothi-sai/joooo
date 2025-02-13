@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Will You Be My Valentine?</title>
+    <style> 
+      body {
+        background-image: url("anmol.jpg");
+        background-size: 25%;
+        background-repeat: repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: aliceblue;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        transition: all 0.5s ease-out;
+      }
+      .container {
+        background: rgb(163, 9, 117);
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        position: relative;
+      }
+      h1 {
+        color: #fff6fa;
+      }
+      .button {
+        display: inline-block;
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 18px;
+        color: rgb(227, 227, 227);
+        background-color: #ef0077;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .button:hover {
+        background-color: #dfdfdf;
+      }
+      .notice {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        font-size: 18px;
+        color: #ff0280;
+        transition: all 0.5s ease-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      input
+    </div>
+    <audio id="audio" src="/song.ogg"></audio>
+    <div class="container">
+      <h1>Will You Be My Valentine? ❤️</h1>
+      <p>
+        You look soo gorgeous and stunning there are no words that could descibe you beauty... I know it's an long distance thing and i dont know if this thing would work out but want to give a try....
+        I like alot of things about you, But still i want to get to know you better and closer to you...... It's hard for both of us to meet I know  yours and my parents are strict and it will be hard for us to meet
+        sooo I'll try my best to meet you soon...............          </p>
+      <div id="buttons">
+        <button class="button" onclick="showNotice()">Yes</button>
+        <button class="button" onclick="duplicateYesButton()">No</button>
+      </div>
+      <div id="notice" class="notice">
+        <p>Our Valentine's Date is set! 💖</p>
+        <p>"Video call Date???</p>
+        <p>Time: "TEXT ME THE DATE AND TIME WHICH WORKS FOR YOU........."</p>
+      </div>
+    </div>
+    <script>
+      function duplicateYesButton() {
+        let buttonsDiv = document.getElementById("buttons");
+        let yesButtons = document.querySelectorAll(".button:nth-child(1)");
+        yesButtons.forEach((button) => {
+          let newButton = button.cloneNode(true);
+          newButton.onclick = showNotice;
+          buttonsDiv.appendChild(newButton);
+        });
+      }
+
+      function showNotice() {
+        document.getElementById("notice").style.display = "block";
+        document.getElementById("audio").play();
+        document.body.style.backgroundImage = `url('/photo2.jpg')`;
+      }
+    </script>
+  </body>
+</html>
