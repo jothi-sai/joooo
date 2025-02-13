@@ -38,7 +38,7 @@
 
         if (user === "anmol" && hashedPassword === storedHash) {
             localStorage.setItem("authenticated", "true");
-            window.location.href = "index.html";
+            window.location.href = "page.html";
         } else {
             document.getElementById("error").innerText = "Invalid credentials!";
         }
